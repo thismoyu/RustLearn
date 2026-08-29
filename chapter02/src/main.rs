@@ -21,7 +21,7 @@ fn main1() {
     println!("x: {x} y: {y}");
 }
 
-fn main3() {
+fn main2() {
     println!("Guess the number!");
 
     let securt_number = rand::thread_rng().gen_range(1..=100);
@@ -36,7 +36,7 @@ fn main3() {
     println!("guess {guess}");
 }
 
-fn main() {
+fn main3() {
     println!("Guess the number!");
 
     let securt_number = rand::thread_rng().gen_range(1..=100);
@@ -56,5 +56,67 @@ fn main() {
         Ordering::Less => println!("Too Small!"),
         Ordering::Greater => println!("Too Big!"),
         Ordering::Equal => println!("Yow Win"),
+    }
+}
+
+// Allowing Multiple Guesses with Looping
+fn main4() {
+    println!("Guess the number!");
+
+    let securt_number = rand::thread_rng().gen_range(1..=100);
+    println!("securt_number is {securt_number}");
+
+    loop {
+        println!("Please input your guess:");
+
+        let mut guess_str = String::new();
+        io::stdin()
+            .read_line(&mut guess_str)
+            .expect("Failed to read line.");
+
+        let guess: u32 = guess_str.trim().parse().expect("Please type a number!");
+
+        println!("you guessed : {guess}");
+
+        match guess.cmp(&securt_number) {
+            Ordering::Less => println!("Too Small!"),
+            Ordering::Greater => println!("Too Big!"),
+            Ordering::Equal => {
+                println!("Yow Win");
+                break;
+            }
+        }
+    }
+}
+
+// Handling Invalid Input
+fn main() {
+    println!("Guess the number!");
+
+    let securt_number = rand::thread_rng().gen_range(1..=100);
+    println!("securt_number is {securt_number}");
+
+    loop {
+        println!("Please input your guess:");
+
+        let mut guess_str = String::new();
+        io::stdin()
+            .read_line(&mut guess_str)
+            .expect("Failed to read line.");
+
+        let guess: u32 = match guess_str.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        println!("you guessed : {guess}");
+
+        match guess.cmp(&securt_number) {
+            Ordering::Less => println!("Too Small!"),
+            Ordering::Greater => println!("Too Big!"),
+            Ordering::Equal => {
+                println!("Yow Win");
+                break;
+            }
+        }
     }
 }
