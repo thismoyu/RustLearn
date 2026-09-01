@@ -12,7 +12,8 @@ Rust 学习笔记与实践代码，按章节组织，对应《The Rust Programmi
 | chapter04 | 所有权 | 所有权三规则、移动与克隆、引用与借用、可变引用限制、字符串切片（`&str`） |
 | chapter05 | 结构体 | 结构体定义与实例化、元组结构体、方法（`impl`）、关联函数与 `Debug` 格式化 |
 | chapter06 | 枚举与模式匹配 | 枚举定义与变体数据、`Option` 类型、`match` / `if let` / `let else` 模式匹配 |
-| chapter07 | （待补充） | 章节内容待编写 |
+| chapter07 | 包、Crate 与模块 | Package/Crate 概念、模块树与文件组织（`mod`）、路径（绝对/相对）、`pub` 可见性、`use` 与 re-export、库 crate（`lib.rs`）与二进制 crate（`main.rs`） |
+| chapter08 | （待补充） | 常见集合：`Vec`、`String`、`HashMap` 等（章节内容待编写） |
 
 ## 结构
 
