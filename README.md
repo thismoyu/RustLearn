@@ -1,6 +1,22 @@
-# 结构
+# RustLearn
 
-项目采用 workspace 结构，见 Cargo.tml:
+Rust 学习笔记与实践代码，按章节组织，对应《The Rust Programming Language》等常见教程的章节顺序。
+
+## 章节说明
+
+| 章节 | 主题 | 简要说明 |
+|------|------|----------|
+| chapter01 | Hello, world! | Rust 程序入口、`println!` 宏与最基础的程序结构 |
+| chapter02 | 猜数字游戏 | 变量与可变性、`rand` 依赖、`match` 比较、`loop` 循环与错误输入处理 |
+| chapter03 | 常见概念 | 变量、常量、遮蔽（shadowing）、函数、条件分支与各类循环（`loop` / `while` / `for`） |
+| chapter04 | 所有权 | 所有权三规则、移动与克隆、引用与借用、可变引用限制、字符串切片（`&str`） |
+| chapter05 | 结构体 | 结构体定义与实例化、元组结构体、方法（`impl`）、关联函数与 `Debug` 格式化 |
+| chapter06 | 枚举与模式匹配 | 枚举定义与变体数据、`Option` 类型、`match` / `if let` / `let else` 模式匹配 |
+| chapter07 | （待补充） | 章节内容待编写 |
+
+## 结构
+
+项目采用 workspace 结构，见 Cargo.toml:
 
 ```toml
 [workspace]
